@@ -1,7 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "cli": {
+    "analytics": false
+  },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "inlineStyle": true,
+      "inlineTemplate": true
+    }
+  },
   "projects": {
     "angular-practice-exin": {
       "projectType": "application",
@@ -32,8 +41,15 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/theme.less",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -91,8 +107,15 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/theme.less",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/"
+              ]
+            },
             "scripts": []
           }
         }
